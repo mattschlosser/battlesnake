@@ -63,13 +63,13 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
         possible_moves.insert("right", false);
     }
     if (my_head.y >= board_height - 1) {
-        possible_moves.insert("down", false);
+        possible_moves.insert("up", false);
     }
     if (my_head.x <= 1) {
         possible_moves.insert("left", false);
     }
     if (my_head.y <= 1) {
-       possible_moves.insert("up", false);
+       possible_moves.insert("down", false);
     }
 
     // TODO: Step 2 - Don't hit yourself.

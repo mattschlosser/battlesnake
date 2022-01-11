@@ -57,8 +57,8 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // TODO: Step 1 - Don't hit walls.
     
     // Use board information to prevent your Battlesnake from moving beyond the boundaries of the board.
-    let board_width = board.width;
-    let board_height = board.height;
+    let board_width = _board.width;
+    let board_height = _board.height;
     if (my_head.x == board_width - 1) {
         possible_moves.insert("right", false);
     }

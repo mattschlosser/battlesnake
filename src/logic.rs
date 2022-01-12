@@ -75,7 +75,7 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // TODO: Step 2 - Don't hit yourself.
     // Use body information to prevent your Battlesnake from colliding with itself.
     // body = move_req.body
-    you.body.iter().for_each(|&coord| {
+    you.body.iter().for_each(|coord| {
         if (coord.x == my_head.x + 1 && coord.y == my_head.y) {
             possible_moves.insert("right", false);
         }

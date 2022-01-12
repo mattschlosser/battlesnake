@@ -116,13 +116,13 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // TODO: Step 4 - Find food.
     // Use board information to seek out and find food.
     // food = move_req.board.food
-    _board.food.for_each(|food| {
+    _board.food.iter().for_each(|food| {
         // we dont want to go in the opposite direction 
         if (food.x < my_head.x) {
-            possible_moves.insert("left", false);
+            possible_moves.insert("right", false);
         }
         if (food.x > my_head.x) {
-            possible_moves.insert("right", false);
+            possible_moves.insert("left", false);
         }
         if (food.y < my_head.y) {
             possible_moves.insert("up", false);

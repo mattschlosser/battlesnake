@@ -59,16 +59,16 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // Use board information to prevent your Battlesnake from moving beyond the boundaries of the board.
     let board_width = _board.width;
     let board_height = _board.height;
-    if (my_head.x >= board_width - 1) {
+    if my_head.x >= board_width - 1 {
         possible_moves.insert("right", false);
     }
-    if (my_head.y >= board_height - 1) {
+    if my_head.y >= board_height - 1 {
         possible_moves.insert("up", false);
     }
-    if (my_head.x <= 0) {
+    if my_head.x <= 0 {
         possible_moves.insert("left", false);
     }
-    if (my_head.y <= 0) {
+    if my_head.y <= 0 {
        possible_moves.insert("down", false);
     }
 
@@ -86,7 +86,7 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
             possible_moves.insert("up", false);
         }
         else if (coord.x == my_head.x && coord.y == my_head.y - 1) {
-            possible_moves.insert("down", false):
+            possible_moves.insert("down", false);
         }
     });
 

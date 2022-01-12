@@ -116,6 +116,22 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // TODO: Step 4 - Find food.
     // Use board information to seek out and find food.
     // food = move_req.board.food
+    _board.food.for_each(|food| {
+        // we dont want to go in the opposite direction 
+        if (food.x < my_head.x) {
+            possible_moves.insert("left", false);
+        }
+        if (food.x > my_head.x) {
+            possible_moves.insert("right", false);
+        }
+        if (food.y < my_head.y) {
+            possible_moves.insert("up", false);
+        }
+        if (food.y > my_head.y) {
+            possible_moves.insert("down", false);
+        }
+    });
+       
 
     // Finally, choose a move from the available safe moves.
     // TODO: Step 5 - Select a move to make based on strategy, rather than random.

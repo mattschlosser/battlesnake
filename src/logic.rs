@@ -106,8 +106,8 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
             else if (coord.x == my_head.x && coord.y == my_head.y - 1) {
                 possible_moves.insert("down", false);
             }
-        }
-    }
+        });
+    });
             
            
     // Use snake vector to prevent your Battlesnake from colliding with others.

@@ -75,6 +75,20 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     // TODO: Step 2 - Don't hit yourself.
     // Use body information to prevent your Battlesnake from colliding with itself.
     // body = move_req.body
+    you.body.into_iter().for_each( move |coord|  {
+        if (coord.x == my_head.x + 1 && coord.y == my_head.y) {
+            possible_moves.insert("right", false);
+        }
+        else if (coord.x == my_head.x - 1 && coord.y == my_head.y) {
+            possible_moves.insert("left", false);
+        } 
+        else if (coord.x == my_head.x && coord.y == my_head.y + 1) {
+            possible_moves.insert("up", false);
+        }
+        else if (coord.x == my_head.x && coord.y == my_head.y - 1) {
+            possible_moves.insert("down", false):
+        }
+    });
 
     // TODO: Step 3 - Don't collide with others.
     // Use snake vector to prevent your Battlesnake from colliding with others.

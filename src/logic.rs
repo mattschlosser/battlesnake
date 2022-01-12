@@ -92,7 +92,7 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     });
 
     // TODO: Step 3 - Don't collide with others.
-    board.snakes.iter().for_each(|snake| {
+    _board.snakes.iter().for_each(|snake| {
         snake.body.iter().for_each(|coord| {   
             if (coord.x == my_head.x + 1 && coord.y == my_head.y) {
                 possible_moves.insert("right", false);

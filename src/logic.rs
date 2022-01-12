@@ -65,10 +65,10 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
     if (my_head.y >= board_height - 1) {
         possible_moves.insert("up", false);
     }
-    if (my_head.x <= 1) {
+    if (my_head.x <= 0) {
         possible_moves.insert("left", false);
     }
-    if (my_head.y <= 1) {
+    if (my_head.y <= 0) {
        possible_moves.insert("down", false);
     }
 

@@ -126,16 +126,16 @@ pub fn get_move(game: &Game, _turn: &u32, _board: &Board, you: &Battlesnake) -> 
         // find the first piece of food
         let food = &_board.food[0];
         // we dont want to go in the opposite direction 
-        if food.x < my_head.x && possible_move_count(possible_moves) > 1 {
+        if food.x < my_head.x && possible_move_count(&possible_moves) > 1 {
             possible_moves.insert("right", false);
         }
-        if food.x > my_head.x && possible_move_count(possible_moves) > 1 {
+        if food.x > my_head.x && possible_move_count(&possible_moves) > 1 {
             possible_moves.insert("left", false);
         }
-        if food.y < my_head.y && possible_move_count(possible_moves) > 1 {
+        if food.y < my_head.y && possible_move_count(&possible_moves) > 1 {
             possible_moves.insert("up", false);
         }
-        if food.y > my_head.y && possible_move_count(possible_moves) > 1 {
+        if food.y > my_head.y && possible_move_count(&possible_moves) > 1 {
             possible_moves.insert("down", false);
         }
     };

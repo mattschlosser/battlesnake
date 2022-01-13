@@ -27,7 +27,7 @@ pub fn end(game: &Game, _turn: &u32, _board: &Board, _you: &Battlesnake) {
     info!("{} END", game.id);
 }
 
-pub fn possible_move_count(possible_moves: &HashMap<&str, bool>) -> usize {
+pub fn possible_move_count(possible_moves: &HashMap<&str, &bool>) -> usize {
     return possible_moves
         .into_iter()
         .filter(|&(_, v)| v == true)

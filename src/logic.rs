@@ -30,7 +30,7 @@ pub fn end(game: &Game, _turn: &u32, _board: &Board, _you: &Battlesnake) {
 pub fn possible_move_count(possible_moves: &HashMap<&str, bool>) -> usize {
     return possible_moves
         .into_iter()
-        .filter(|&(_, v)| v == true)
+        .filter(|&(_, v)| *v == true)
         .count();
 }
 
